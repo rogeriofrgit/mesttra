@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Teste</title>
+    <meta charset="utf-8">
+	<style type="text/css">
+
+		table, th, td {
+  			border: 0px;
+		}
+
+		.btnSalvar {
+			width: 50%;
+			background-color: #118107f2;
+			background-image: -webkit-linear-gradient(top, #118107f2, #0d6b04f2);
+			background-image: -moz-linear-gradient(top, #118107f2, #0d6b04f2);
+			background-image: -ms-linear-gradient(top, #118107f2, #0d6b04f2);
+			background-image: -o-linear-gradient(top, #118107f2, #0d6b04f2);
+			background-image: linear-gradient(to bottom, #118107f2, #0d6b04f2);
+			color: #ffffff;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border-style: solid;
+			border-color: whitesmoke;
+			border-radius: 4px;
+			cursor: pointer;
+			font-family:verdana;
+			font-size:20px;
+			justify-content:center;
+  			align-items:center;
+		}
+
+		.btnIniciar {
+			background: #118107f2;
+			background-image: -webkit-linear-gradient(top, #118107f2, #0d6b04f2);
+			background-image: -moz-linear-gradient(top, #118107f2, #0d6b04f2);
+			background-image: -ms-linear-gradient(top, #118107f2, #0d6b04f2);
+			background-image: -o-linear-gradient(top, #118107f2, #0d6b04f2);
+			background-image: linear-gradient(to bottom, #118107f2, #0d6b04f2);
+			border-radius: 4px;
+			border-style: solid;
+			border-color: whitesmoke;
+			text-shadow: 1px 1px 4px #666666;
+			font-family: verdana;
+			color: #ffffff;
+			font-size:20px;
+			padding: 10px 60px 10px 60px;
+		}
+		
+		.btnSalvar:hover {
+			background: #0d6b04f2;
+			text-decoration: none;
+		}
+
+		.btnIniciar:hover {
+			background: #0d6b04f2;
+			text-decoration: none;
+		}
+
+		.divFim {
+			display: none;
+			font-family:verdana;
+			font-size:40px;
+			justify-content:center;
+			align-items:center;
+			position: fixed;
+			color: white;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #0d6b04f2; 
+			z-index: 9999; 
+		}
+
+		.inicioDivExterno {
+		    display: flex;
+    		align-items: center;
+    		justify-content: center;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #0d6b04f2; 
+			z-index: 9999; 
+		}
+
+		.inicioDivInterno {
+			width: 1000px;
+			height: 700px;
+			color: white;
+			line-height: 1.5;
+		}
+
+		.campoResposta {
+			width: 60px;
+			padding: 10px 20px 10px ;
+			border: 2px solid #999;
+			border-radius: 4px;
+			box-sizing: border-box;
+			font-size: 20px;
+		}
+
+		.campoDadosPessoais {
+			padding: 5px 5px 5px ;
+			border: 2px solid #999;
+			border-radius: 4px;
+			box-sizing: border-box;
+			font-size: 20px;
+		}
+
+        .centralizado {
+			border-radius: 4px;
+            background-color: #c0b7b7;
+            border: 2px solid #999;
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+		td {
+			vertical-align: Middle;
+			padding: 8px;
+		}
+
+		.tituloQuestao {
+			font-weight: bold;
+		}
+
+		.fontGeral {
+			font-family:verdana;
+			font-size:16px;
+			color:#2b2929
+			
+		}
+
+		.divSalvar{ 
+			display: none;
+			text-align: center ;
+			justify-content: center;
+			align-items:center;
+		}
+
+	</style>
+  </head>
+  <body onload="autoSelecionarTexto();">
+	<form name="disc">
+	<div class="divFim">Dados salvos com sucesso!!!!!</div>
+	<div class="fontGeral">
+	<div class="inicioDivExterno">
+		<div class="inicioDivInterno" style="font-size:20px;">
+			<div style="text-align: center;">INSTRUÇÕES PARA A REALIZAÇÃO DO QUESTIONÁRIO</div>	<br>
+			<div>Será apresentado para você diversas questões e para cada questão existirá quatro possíveis respostas que você deverá responder com os números 1, 2, 3 e 4.</div>
+			<br>
+			<div>Analise as opções e responda com o número:</div>
+			<div>
+			<br>
+			<div style="line-height: 1.2;">
+			1: para a opção que você com certeza MENOS se identifica.<br>
+			2: para a opção que você MENOS se identifica e.<br>
+			3: para a opção que é a segunda com a qual você MAIS se identifica.<br>
+			4: para a opção com a qual você MAIS se identifica.<br>
+			</div>
+			</div><br>
+			Você deve responder ao lado de cada opção com os números 1, 2, 3 ou 4. Você não pode repetir nenhum dos números dentro da mesma questão, ou seja, só pode existir uma resposta com o número 1, uma resposta com o número 2 e assim sucessivamente.<br>
+			<br>
+			<div>NÃO PENSE MUITO PARA RESPONDER, o primeiro pensamento que vem à mente é o mais instintivo, livre de filtros ou direcionamentos. Não existe resposta correta, apenas respostas mais comuns para cada tipo de perfil.</div>
+			<br>
+			<br>
+			<div style="text-align: center;"><input type="button" value="Iniciar Teste" class="btnIniciar" onclick="esconderInicio()"></div>
+		</div>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">Digite os seus dados: </label><br><br>
+		CPF:
+		<input type="text" name="cpf" id="cpf" class="campoDadosPessoais" style="width: 200px;" onblur="validarCamposPessoais()">
+		Email:
+		<input type="text" name="email" id="email" class="campoDadosPessoais" style="width: 400px;" onblur="validarCamposPessoais()">
+		<br>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="dadosPessoais" style="color: #e4e441">Preencha o campo de CPF e email.</span>
+	</div>
+	
+	<div class="centralizado">
+		<label class="tituloQuestao">01: Em um restaurante. Estou esperando uma mesa e o garçom me diz que em 10 minutos terei uma mesa, porém passam 20 minutos:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao1a" class="campoResposta" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Me aborreço e digo ao garçom que já se passou o dobro do tempo, e lhe informo que se demorar muito irei embora e eles perderão um cliente</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao1b" class="campoResposta" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Não me dou conta pois estou envolvido em uma conversa.</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao1c" class="campoResposta" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Não me fixo ao tempo, ainda que eu saiba do atraso, não falo nada.</td>
+
+			</tr>
+			<tr>
+				<td><input type="text" name="questao1d" class="campoResposta" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Informo ao Garçom exatamente a hora que cheguei e exatamente o tempo que passou e peço que por favor me diga com exatidão quanto tempo ainda falta para que eu possa tomar uma decisão.</td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao1status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+	<div>
+	<input type="text" name="perfil" id="perfil" hidden>
+	<input type="text" name="dominante" id="dominante" hidden>
+	<input type="text" name="influente" id="influente" hidden>
+	<input type="text" name="estavel" id="estavel" hidden>
+	<input type="text" name="condescendente" id="condescendente" hidden>
+	</div>
+	<div class="centralizado">
+		<label class="tituloQuestao">02: Estou em um restaurante e tenho muita fome e pressa. O garçom me traz um prato que eu não pedi:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao2a" class="campoResposta" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Digo de maneira direta que este não foi o prato que pedi.</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao2b" class="campoResposta" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Chamo o garçom e converso com ele explicando que este não era o prato que eu havia pedido.</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao2c" class="campoResposta" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Fico calado e aceito o prato que me trouxeram.</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao2d" class="campoResposta" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Me incomodo e pergunto ao garçom de uma forma aborrecida se ele estava prestando atenção quando fiz meu pedido.</td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao2status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">03: Em uma reunião de amigos:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao3a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Eu gosto de convencer aos demais de minhas opiniões e gosto de falar sobre temas relacionados com meu trabalho.</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao3b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Escuto as pessoas. As pessoas me procuram pois sou um excelente ouvinte. Escuto as pessoas com atenção.</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao3c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Falo muito e conto bastante piadas. Geralmente falo mais do que escuto.</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao3d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Observo e analiso as pessoas, porém dou minha opinião. Todavia só dou minha opinião quando conheço o tema e quando o faço sou preciso.</td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao3status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">04: Meus companheiros de trabalho ou amigos me descrevem como alguém:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao4a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Tranquilo, Paciente, Amável.</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao4b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Social, Alegre, Gosta de Conversar.</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao4c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Enérgico, Forte, Agressivo.</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao4d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Concreto, Disciplinado, Metódico.</td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao4status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">05:  Em uma discussão:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao5a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Trato de dizer que não é para tanto, pois discutir me aborrece.</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao5b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Busco ter a razão e não paro até que consiga. Gosto de discutir.</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao5c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Odeio agressões, concordo com o que esta sendo dito para não precisar argumentar.</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao5d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Me baseio nos fatos e busco comprovar meu ponto de vista de uma forma fundamentada e também espero que os demais hajam assim.</td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao5status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">06: O que realmente me emociona na vida:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao6a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Os desafios, As novidades, Arriscar.</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao6b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. As surpresas, A diversão, O jogo.</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao6c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. A doçura, O carinho, Aceitação</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao6d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Aprender, Sabedoria, Conhecimento</td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao6status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">07: Se alguém me agride:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao7a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Fico calado e não demonstro o que sinto.</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao7b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Escapo da situação ou pergunto a outra pessoa se ela é louca.</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao7c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Devolvo a agressão pois necessito demonstrar minha insatisfação de imediato. Da mesma forma que me incomodo rapidamente me tranquilizo.</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao7d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Me angustio, me privo e me resguardo, porém tento descobrir por que isso aconteceu. Demora algum tempo para que passe minha insatisfação com o acontecido.</td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao7status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">08: Quando vou as compras</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao8a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Busco ofertas, os descontos me fascinam. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao8b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Me divirto indo as compras. Gosto de comprar presentes, dizem que sou um comprador compulsivo. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao8c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Sei o que quero e não gasto meu dinheiro se não encontro. Sou muito definido. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao8d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Sou indeciso, me dá muito trabalho decidir e escolher. </td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao8status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+		
+	<div class="centralizado">
+		<label class="tituloQuestao">09: Que frase te descreve melhor:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao9a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Sou tranquilo e passivo, gosto das pessoas que são fáceis de conviver e que não me agridam. As pessoas me perguntam se nunca me aborreço. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao9b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Sou alegre e jovial. Se vejo alguém triste procuro levar alegria a está pessoa. As pessoas me perguntam se nunca me deprimo. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao9c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Sou ativo e enérgico, gosto de fazer várias coisas ao mesmo tempo, as pessoas perguntam se não me canso. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao9d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Sou analítico e observador, gosto de resolver problemas que me exijam pensar e de encontrar soluções. As pessoas me dizem que sou muito responsável e apreensivo. </td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao9status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+	
+	<div class="centralizado">
+		<label class="tituloQuestao">10: Quando estou trabalhando em equipe sou:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao10a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. O que organiza a parte estratégica com finalidade de conseguir uma maior probabilidade de êxito. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao10b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. O que anima o ambiente fazendo com que todos tenham vontade. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao10c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. O que manda e organiza. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao10d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. O que apóia com propósito de se ter uma equipe unida. </td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao10status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">11: Meus irmãos e as pessoas que me rodeiam , dizem que meus piores defeitos são:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao11a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Ser teimoso e quadrado </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao11b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Ser agressivo e temperamental. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao11c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Ser submisso e lento. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao11d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Ser distraído e desorganizado. </td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao11status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">12: Alguma de minhas qualidades são:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao12a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Ser Determinado e seguro. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao12b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Ser Adaptado e pacífico. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao12c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Ser Otimista e alegre. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao12d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Ser Cumpridor e estável </td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao12status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">13: Estou caminhando e esbarro com algum desconhecido:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao13a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Dou um passo ao lado e sem falar sigo meu caminho. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao13b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Dou um sorriso e sigo em frente. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao13c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Espero que a pessoa saia do meu caminho para poder seguir adiante. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao13d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Peço que me desculpe e sigo em frente. </td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao13status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">14: No trabalho me sobressaio em:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao14a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Na tomada de decisões rapidamente. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao14b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Nas relações públicas </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao14c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Na capacidade de me adaptar a equipes </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao14d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Na segurança de ter qualidade e pontualidade. </td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao14status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">15: Meus defeitos no trabalho são:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao15a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Não gosto de delegar, prefiro trabalhar sozinho. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao15b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Não gosto que me digam o que fazer. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao15c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Trabalho mais sobre baixa pressão. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao15d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Desordenado e esquecido e as vezes impontual. </td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao15status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">16: Minha mãe diz que quando criança eu era:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao16a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Obediente e tranquilo. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao16b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Mandão e exigente. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao16c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Alegre e conversava com todo mundo. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao16d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Bem arrumado e eu não gostava de me sujar. </td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao16status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">17: Ao me expressar:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao17a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Falo as coisas de maneira diplomática. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao17b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Quase não expresso o que sinto. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao17c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Falo de maneira indireta para não magoar. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao17d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Falo as coisas como são. </td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao17status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">18: A emoção que demonstro com mais frequência é:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao18a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Medo. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao18b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Otimismo </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao18c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Não demonstro emoção. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao18d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Irritação. </td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao18status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">19: Os professores me reconheciam por que:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao19a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Discutia muito e gostava de demonstrar tudo que eu sabia. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao19b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Bom estudante e bastante analítico. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao19c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Não interrompia e ficava calado. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao19d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Era muito amigável e gostava de conversar. </td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao19status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">20: Características que mais te descrevem:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao20a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Auto-suficiente e ambicioso. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao20b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Preciso e exato. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao20c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Cooperativo e adaptável. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao20d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Despreocupado e popular. </td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao20status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">21: Características que mais te descrevem:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao21a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Reservado e educado. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao21b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Amigo e conversador. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao21c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Tolerante e flexível. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao21d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Valente e ousado. </td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao21status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">22: Características que mais te descrevem:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao22a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Obstinado, determinação para me defender. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao22b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Confiante, acredito nas pessoas. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao22c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Prudente, gosto de refletir bem sobre as coisas. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao22d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Pronto a servir, gosto de ajudar aos demais. </td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao22status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">23: Características que mais te descrevem:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao23a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Brincalhão, chama a atenção das pessoas. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao23b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Empreendedor, força de vontade. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao23c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Generoso, se adapta aos demais. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao23d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Cuidadoso, cautela ao tomar decisões. </td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao23status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">24: Características que mais te descrevem:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao24a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Calmo, faz o que te pedem. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao24b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Envolvente, motiva aos demais. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao24c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Atrevido, crê em si próprio. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao24d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Disciplinado, organizado e limpo. </td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao24status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">25: Características que mais te descrevem:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao25a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Culto, busca ter conhecimento. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao25b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Animado, alma da festa. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao25c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Harmonioso, aberto a sugestões. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao25d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Confrontante, gosta de argumentar. </td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao25status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	<div class="centralizado">
+		<label class="tituloQuestao">26: Características que mais te descrevem:</label><br><br>
+		<table>
+			<tr><td><input type="text" name="questao26a" class="campoResposta" onblur="validarCampo()"></td>
+				<td>A. Humilde, compassivo (condolente) com as pessoas. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao26b" class="campoResposta" onblur="validarCampo()"></td>
+				<td>B. Carismático, atrai as pessoas, desinibido. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao26c" class="campoResposta" onblur="validarCampo()"></td>
+				<td>C. Tem atitude, persuasivo, convincente. </td>
+			</tr>
+			<tr>
+				<td><input type="text" name="questao26d" class="campoResposta" onblur="validarCampo()"></td>
+				<td>D. Sistemático, cético, precavido. </td>
+			</tr>
+		</table>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao26status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+	</div>
+
+	</div>
+	<div style="height: 100px;">
+		<div class="divSalvar"><input type="submit" value="Salvar" class="btnSalvar" id="btnSalvar"></div>
+	</div>
+	<input type="button" value="Calcular" onclick="calcularSomas()" style="display:none;" >
+	</form>
+	<script>
+
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbzQ82Q8iFrNLIHVJLTClBCkOUqbBvLXlxXy8TRVcaBnu8-852XLUClGf8_eHPSPSo5Kug/exec';
+		const form = document.forms['disc'];
+
+		form.addEventListener('submit', e => {
+			document.getElementById("btnSalvar").value = "Aguarde o envio dos dados ...";
+			calcularSomas();
+			e.preventDefault();
+			fetch(scriptURL, {method: 'POST', body: new FormData(form)})
+			.then(response => document.querySelector(".divFim").style.display = "flex",
+							  document.getElementById("btnSalvar").disabled = true
+				 )
+			.catch(error => alert('Ocorreu algum erro no envio dos dados, tente salvar novamente.',
+			       document.getElementById("btnSalvar").value = "Salvar"),
+				   document.getElementById("btnSalvar").disabled = false
+				   );
+		})
+
+		function esconderInicio() {
+			document.querySelector(".inicioDivExterno").style.display = "none";
+		}
+
+		function autoSelecionarTexto() {
+        	const inputsTexto = document.querySelectorAll('input[type="text"]');
+        	inputsTexto.forEach((input) => { input.addEventListener('focus', () => {input.select();}); });
+      	}
+
+		function emailValido(email){
+    		//expressão regular para verificar o formato do e-mail
+    		var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    		return emailRegex.test(email);
+		}
+
+		function cpfValido(strCPF){
+			var soma;
+			var resto;
+
+			soma = 0;
+
+			if (strCPF.length !== 11) 
+		      	return false;
+    		
+			var cpfInvalido = '';
+			//verifica se o cpf nao possui todos os digitos iguais
+			for (var i = 0; i <= 9; i++) {
+				for (var x = 1; x <= 11; x++)
+					cpfInvalido += i;
+				if (strCPF == cpfInvalido) 
+					return false;
+				cpfInvalido = '';
+			}
+				
+			for (var i = 1; i <= 9; i++) 
+				soma = soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
+			
+
+			resto = (soma * 10) % 11;
+
+			if ((resto == 10) || (resto == 11))  
+				resto = 0;
+			
+			if (resto != parseInt(strCPF.substring(9, 10)) ) 
+				return false;
+			
+			soma = 0;
+			
+			for (i = 1; i <= 10; i++) 
+				soma = soma + parseInt(strCPF.substring(i-1, i)) * (12 - i);
+			
+			resto = (soma * 10) % 11;
+
+			if ((resto == 10) || (resto == 11))  
+				resto = 0;
+
+			if (resto != parseInt(strCPF.substring(10, 11) ) ) 
+				return false; 
+
+			return true;
+		}
+
+		function validarCamposPessoais(){
+			var erroCPF = 0;
+			var erroEmail = 0;
+			
+			const campoStatus = document.getElementById("dadosPessoais");
+			const campoCPF = document.getElementById("cpf");
+			const campoEmail = document.getElementById("email");
+
+			var strCPF = campoCPF.value;
+			var strEmail = campoEmail.value;
+
+			strCPF = strCPF.replace(/[^\d]+/g, ''); // Remover caracteres não numéricos
+			campoCPF.value = strCPF;
+
+			cpfOK = cpfValido(strCPF);
+			emailOK = emailValido(strEmail);
+
+			//volta o background para branco e status para o padrao correto se os campos estiverem vazios
+			if (strCPF.length == 0){
+				campoCPF.style.background = "#ffffff";
+				campoStatus.innerHTML = "Preencha o campo de CPF.";
+				campoStatus.style.color = "#e4e441"; 
+			}
+			
+			if (strEmail.length == 0){
+				document.getElementById("email").style.background = "#ffffff";
+				campoStatus.innerHTML = "Preencha o campo de email.";
+				campoStatus.style.color = "#e4e441"; 
+			}
+
+			//volta a mensagem de preenchimento dos campos se os dois estiverem vazios
+			if (strCPF.length == 0 && strEmail.length == 0){
+				campoStatus.innerHTML = "Preencha o campo de CPF e email.";
+				//campoStatus.style.color = "#e4e441"; 
+				return false
+			}
+			
+			if (strCPF.length != 0)  {
+				if (!cpfOK) {
+					campoStatus.innerHTML = "CPF incorreto.";
+					campoStatus.style.color = "#d14f4f";
+					campoCPF.style.background = "#d14f4f";
+				} else {
+					campoCPF.style.background = "#4CAF50";
+					campoStatus.innerHTML = "Preencha o campo de email.";
+				}
+			} 
+
+			if (strEmail.length != 0)  {
+				if (!emailOK) {
+					//da prioridade para a mensagem de erro de cpf invalido
+					if (campoStatus.innerHTML != "CPF incorreto.") {
+						campoStatus.innerHTML = "Email inválido.";
+					}
+					campoStatus.style.color = "#d14f4f";
+					campoEmail.style.background = "#d14f4f";
+					return false;
+				} else {
+					campoEmail.style.background = "#4CAF50";
+				}
+			} 
+
+			if (cpfOK && emailOK){
+				campoStatus.innerHTML = "Preenchimento correto.";
+				campoStatus.style.color = "#4CAF50"; 
+			}
+
+		}
+		
+
+		function validarCampoEmail(){
+			var email = String(event.target.name).value;
+		}
+
+		function validarCampo() {
+			var valorCampo;
+			
+			//indentifica o campo que acionou o evento
+			var elementoBaseQueAcionou = String(event.target.name);
+			
+			//como os campos possuem o mesmo nome de inicio, tira o ultimo caractere, para obter o nome comum
+			elementoBaseQueAcionou = elementoBaseQueAcionou.substring(0, elementoBaseQueAcionou.length - 1);
+
+			var campoStatus = document.getElementById(elementoBaseQueAcionou+"status");
+			var campoResposta;
+
+			var erro = 0;
+			var contVazio = 0;
+
+			const letras = ["a","b","c","d"];
+
+			//verifica se os campos estão preenchidos com apenas 1, 2, 3 ou 4
+			for (var i=0; i<=3;i++) {
+				campoResposta = document.getElementsByName(elementoBaseQueAcionou+letras[i]);
+				valorCampo = campoResposta[0].value;
+
+				//remove os espacos em branco de cada campo e atualiza o campo sem espacos
+				valorCampo = valorCampo.trim();
+				campoResposta[0].value = valorCampo;
+
+				if (valorCampo != '') {
+					if ((isNaN(valorCampo) || valorCampo < 1 || valorCampo > 4)) {
+						campoResposta[0].style.background = '#d14f4f';
+						erro = 2;
+					} else {
+						campoResposta[0].style.background = "#21c229";
+					}
+				} else {
+					campoResposta[0].style.background = "#ffffff";
+					contVazio++;
+				}
+			
+			}
+			
+			//da prioridade para o erro do tipo 2
+			if (contVazio != 0 && erro != 2)  {
+				erro = 1
+			}
+
+			var campo1, campo2;
+
+			//verifica se os campos não estão com valores duplicados
+			for (var i=0; i<=3;i++){
+				campo1 = document.getElementsByName(elementoBaseQueAcionou+letras[i]);
+				for (var j=0; j<=3;j++){
+					campo2 = document.getElementsByName(elementoBaseQueAcionou+letras[j]);
+					if (i != j && campo1[0].value == campo2[0].value && campo1[0].value != ''){
+						campo1[0].style.background = '#d14f4f';
+						//da prioridade para o erro do tipo 2
+						if (erro != 2)  {
+							erro = 3;
+						}
+					}
+				}
+			}
+
+			//ajusta o status de preenchimento
+			switch(erro){
+				case 1: 
+					campoStatus.innerHTML = "Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.";
+					campoStatus.style = "color: #e4e441";
+					break;
+				case 2: 
+					campoStatus.innerHTML = "O(s) campo(s) destacados em vermelho devem ser preenchidos com valores de 1 à 4.";
+					campoStatus.style = "color: #d14f4f";
+					break;
+				case 3: 
+					campoStatus.innerHTML = "Os valores não podem se repetir na mesma questão.";
+					campoStatus.style = "color: #d14f4f";			
+					break;
+				default:
+					campoStatus.innerHTML = "Preenchimento correto.";
+					campoStatus.style = "color: #4CAF50";
+			} 
+			
+
+			var erro = 0;
+			for (var i=1; i<=26; i++) {
+				if (document.getElementById("questao"+i+"status").innerHTML != "Preenchimento correto.") {
+					erro = 1;
+					break;
+				}
+			}
+
+			if (erro == 0) {
+				document.getElementById("btnSalvar").disabled = false;
+				document.querySelector(".divSalvar").style.display = "flex";
+				document.getElementById("btnSalvar").focus();
+			} else {
+				document.getElementById("btnSalvar").disabled = true;
+				document.querySelector(".divSalvar").style.display = "none";
+			}
+		}
+
+		function calcularSomas(){
+			var dominante, influente, estavel, condescendente;
+			
+			dominante = influente = estavel = condescendente = 0;
+
+			for (var i=1; i<=26;i++) {
+				dominante += parseInt(document.getElementsByName("questao"+i+"a")[0].value);
+				influente += parseInt(document.getElementsByName("questao"+i+"b")[0].value);
+				estavel += parseInt(document.getElementsByName("questao"+i+"c")[0].value);
+				condescendente += parseInt(document.getElementsByName("questao"+i+"d")[0].value);
+			}
+
+			var maior = 0;
+			var perfil = '';
+
+			if (dominante > maior) {
+				maior = dominante;
+				perfil = 'dominante';
+			}
+
+			if (estavel > maior) {
+				maior = estavel;
+				perfil = 'estavel';
+			} else if (estavel == maior) {
+				perfil += ' + estavel';
+			}
+
+			if (influente > maior) {
+				maior = influente;
+				perfil = 'influente';
+			} else if (influente == maior) {
+				perfil += ' + influente';
+			}
+
+			if (condescendente > maior) {
+				maior = condescendente;
+				perfil = 'condescendente' 
+			} else if (condescendente == maior){
+				perfil += ' + condescendente';
+			}
+
+			document.getElementById("dominante").value = dominante;
+			document.getElementById("influente").value = influente;
+			document.getElementById("estavel").value = estavel;
+			document.getElementById("condescendente").value = condescendente;
+			
+			document.getElementById("perfil").value = perfil;
+
+		}
+
+		</script>
+  </body>
+</html> 
