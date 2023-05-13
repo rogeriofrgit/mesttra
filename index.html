@@ -73,6 +73,11 @@
 			z-index: 9999; 
 		}
 
+		.textoDivInterno{
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
 		.inicioDivExterno {
 		    display: flex;
     		align-items: center;
@@ -151,21 +156,22 @@
 	<div class="inicioDivExterno">
 		<div class="inicioDivInterno" style="font-size:20px;">
 			<div style="text-align: center;">INSTRUÇÕES PARA A REALIZAÇÃO DO QUESTIONÁRIO</div>	<br>
-			<div>Será apresentado para você diversas questões e para cada questão existirá quatro possíveis respostas que você deverá responder com os números 1, 2, 3 e 4.</div>
+			<div class="textoDivInterno">Será apresentado para você diversas questões e para cada questão existirá quatro possíveis respostas que você deverá responder com os números 1, 2, 3 e 4.</div>
 			<br>
-			<div>Analise as opções e responda com o número:</div>
-			<div>
+			<div class="textoDivInterno">Analise as opções e responda com o número:</div>
+	
 			<br>
-			<div style="line-height: 1.2;">
+			<div style="line-height: 1.2;" class="textoDivInterno">
 			1: para a opção que você com certeza MENOS se identifica.<br>
 			2: para a opção que você MENOS se identifica e.<br>
 			3: para a opção que é a segunda com a qual você MAIS se identifica.<br>
 			4: para a opção com a qual você MAIS se identifica.<br>
-			</div>
 			</div><br>
+			<div class="textoDivInterno">
 			Você deve responder ao lado de cada opção com os números 1, 2, 3 ou 4. Você não pode repetir nenhum dos números dentro da mesma questão, ou seja, só pode existir uma resposta com o número 1, uma resposta com o número 2 e assim sucessivamente.<br>
+			</div>
 			<br>
-			<div>NÃO PENSE MUITO PARA RESPONDER, o primeiro pensamento que vem à mente é o mais instintivo, livre de filtros ou direcionamentos. Não existe resposta correta, apenas respostas mais comuns para cada tipo de perfil.</div>
+			<div class="textoDivInterno">NÃO PENSE MUITO PARA RESPONDER, o primeiro pensamento que vem à mente é o mais instintivo, livre de filtros ou direcionamentos. Não existe resposta correta, apenas respostas mais comuns para cada tipo de perfil.</div>
 			<br>
 			<br>
 			<div style="text-align: center;"><input type="button" value="Iniciar Teste" class="btnIniciar" onclick="esconderInicio()"></div>
