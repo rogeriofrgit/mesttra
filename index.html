@@ -5,6 +5,19 @@
     <meta charset="utf-8">
 	<style type="text/css">
 
+    	.suspensa {
+			position: fixed;
+			top: 5%;
+			left: 70%;
+			font-family:verdana;
+			font-size:15px;
+			background-color: #f1f1f1;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	    }
+
 		table, th, td {
   			border: 0px;
 		}
@@ -156,14 +169,14 @@
 	<div class="inicioDivExterno">
 		<div class="inicioDivInterno" style="font-size:20px;">
 			<div style="text-align: center;">INSTRUÇÕES PARA A REALIZAÇÃO DO QUESTIONÁRIO</div>	<br>
-			<div class="textoDivInterno">Será apresentado para você diversas questões e para cada questão existirá quatro possíveis respostas que você deverá responder com os números 1, 2, 3 e 4.</div>
+			<div class="textoDivInterno">Serão apresentadas para você diversas questões e, para cada uma, existirão quatro possíveis respostas que deverão ser respondidas com os números 1, 2, 3 e 4.</div>
 			<br>
 			<div class="textoDivInterno">Analise as opções e responda com o número:</div>
 	
 			<br>
 			<div style="line-height: 1.2;" class="textoDivInterno">
 			1: para a opção que você com certeza MENOS se identifica.<br>
-			2: para a opção que você MENOS se identifica e.<br>
+			2: para a opção que você MENOS se identifica.<br>
 			3: para a opção que é a segunda com a qual você MAIS se identifica.<br>
 			4: para a opção com a qual você MAIS se identifica.<br>
 			</div><br>
@@ -177,6 +190,15 @@
 			<div style="text-align: center;"><input type="button" value="Iniciar Teste" class="btnIniciar" onclick="esconderInicio()"></div>
 		</div>
 	</div>
+
+	<div class="suspensa">
+			Preencha os campos em branco com os números 1, 2, 3 e 4.
+			<br><br>
+			1: com certeza MENOS se identifica.<br>
+			2: segunda opção que MENOS se identifica.<br>
+			3: segunda opção que MAIS se identifica.<br>
+			4: com certeza que MAIS se identifica.<br>
+    </div>
 
 	<div class="centralizado">
 		<label class="tituloQuestao">Digite os seus dados: </label><br><br>
