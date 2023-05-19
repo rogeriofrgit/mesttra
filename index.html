@@ -11,9 +11,9 @@
 			left: 70%;
 			font-family:verdana;
 			font-size:15px;
-			background-color: #f1f1f1;
+			background-color: #e4d4fc;
 			padding: 20px;
-			border: 1px solid #ccc;
+			border: 1px solid #c3a3f4;
 			border-radius: 4px;
 			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 	    }
@@ -24,12 +24,12 @@
 
 		.btnSalvar {
 			width: 50%;
-			background-color: #118107f2;
-			background-image: -webkit-linear-gradient(top, #118107f2, #0d6b04f2);
-			background-image: -moz-linear-gradient(top, #118107f2, #0d6b04f2);
-			background-image: -ms-linear-gradient(top, #118107f2, #0d6b04f2);
-			background-image: -o-linear-gradient(top, #118107f2, #0d6b04f2);
-			background-image: linear-gradient(to bottom, #118107f2, #0d6b04f2);
+			background-color: #5b1ad49d;
+			background-image: -webkit-linear-gradient(top,#6620eb, #a47cf4);
+			background-image: -moz-linear-gradient(top,#6620eb, #a47cf4);
+			background-image: -ms-linear-gradient(top,#6620eb, #a47cf4);
+			background-image: -o-linear-gradient(top,#6620eb, #a47cf4);
+			background-image: linear-gradient(to bottom, #6620eb, #a47cf4);
 			color: #ffffff;
 			padding: 14px 20px;
 			margin: 8px 0;
@@ -45,11 +45,11 @@
 
 		.btnIniciar {
 			background: #118107f2;
-			background-image: -webkit-linear-gradient(top, #118107f2, #0d6b04f2);
-			background-image: -moz-linear-gradient(top, #118107f2, #0d6b04f2);
-			background-image: -ms-linear-gradient(top, #118107f2, #0d6b04f2);
-			background-image: -o-linear-gradient(top, #118107f2, #0d6b04f2);
-			background-image: linear-gradient(to bottom, #118107f2, #0d6b04f2);
+			background-image: -webkit-linear-gradient(top, #6620eb, #a47cf4);
+			background-image: -moz-linear-gradient(top, #6620eb, #a47cf4);
+			background-image: -ms-linear-gradient(top, #6620eb, #a47cf4);
+			background-image: -o-linear-gradient(top, #6620eb, #a47cf4);
+			background-image: linear-gradient(to bottom, #6620eb, #a47cf4);
 			border-radius: 4px;
 			border-style: solid;
 			border-color: whitesmoke;
@@ -61,12 +61,12 @@
 		}
 		
 		.btnSalvar:hover {
-			background: #0d6b04f2;
+			background: #6620eb;
 			text-decoration: none;
 		}
 
 		.btnIniciar:hover {
-			background: #0d6b04f2;
+			background: #6620eb;
 			text-decoration: none;
 		}
 
@@ -82,7 +82,7 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color: #0d6b04f2; 
+			background-color: #6620eb; 
 			z-index: 9999; 
 		}
 
@@ -100,7 +100,7 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color: #0d6b04f2; 
+			background-color: #6620eb; 
 			z-index: 9999; 
 		}
 
@@ -114,7 +114,7 @@
 		.campoResposta {
 			width: 60px;
 			padding: 10px 20px 10px ;
-			border: 2px solid #999;
+			border: 2px solid #e4d4fc;
 			border-radius: 4px;
 			box-sizing: border-box;
 			font-size: 20px;
@@ -122,7 +122,7 @@
 
 		.campoDadosPessoais {
 			padding: 5px 5px 5px ;
-			border: 2px solid #999;
+			border: 2px solid #e4d4fc;
 			border-radius: 4px;
 			box-sizing: border-box;
 			font-size: 20px;
@@ -130,8 +130,8 @@
 
         .centralizado {
 			border-radius: 4px;
-            background-color: #c0b7b7;
-            border: 2px solid #999;
+            background-color: #e4d4fc;
+            border: 2px solid #c3a3f4;
             width: 90%;
             margin: 20px auto;
             padding: 20px;
@@ -167,7 +167,8 @@
 	<div class="divFim">Dados salvos com sucesso!!!!!</div>
 	<div class="fontGeral">
 	<div class="inicioDivExterno">
-		<div class="inicioDivInterno" style="font-size:20px;">
+		<div class="inicioDivInterno" style="font-size:18px;">
+			<div style="text-align: center;"><img src="logo.png"></div><br>
 			<div style="text-align: center;">INSTRUÇÕES PARA A REALIZAÇÃO DO QUESTIONÁRIO</div>	<br>
 			<div class="textoDivInterno">Serão apresentadas para você diversas questões e, para cada uma, existirão quatro possíveis respostas que deverão ser respondidas com os números 1, 2, 3 e 4.</div>
 			<br>
@@ -208,7 +209,7 @@
 		<input type="text" name="email" id="email" class="campoDadosPessoais" style="width: 400px;" onblur="validarCamposPessoais()">
 		<br>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="dadosPessoais" style="color: #e4e441">Preencha o campo de CPF e email.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="dadosPessoais" style="color: #7438ec">Preencha o campo de CPF e email.</span>
 	</div>
 	
 	<div class="centralizado">
@@ -232,7 +233,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao1status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao1status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 	<div>
 	<input type="text" name="perfil" id="perfil" hidden>
@@ -261,7 +262,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao2status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao2status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -284,7 +285,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao3status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao3status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -307,7 +308,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao4status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao4status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -330,7 +331,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao5status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao5status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -353,7 +354,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao6status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao6status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -376,7 +377,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao7status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao7status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -399,7 +400,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao8status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao8status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 		
@@ -423,7 +424,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao9status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao9status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 	
 	<div class="centralizado">
@@ -446,7 +447,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao10status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao10status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -469,7 +470,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao11status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao11status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -492,7 +493,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao12status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao12status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -515,7 +516,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao13status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao13status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -538,7 +539,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao14status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao14status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -561,7 +562,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao15status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao15status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -584,7 +585,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao16status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao16status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -607,7 +608,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao17status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao17status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -630,7 +631,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao18status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao18status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -653,7 +654,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao19status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao19status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -676,7 +677,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao20status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao20status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -699,7 +700,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao21status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao21status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -722,7 +723,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao22status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao22status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -745,7 +746,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao23status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao23status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -768,7 +769,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao24status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao24status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -791,7 +792,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao25status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao25status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	<div class="centralizado">
@@ -814,7 +815,7 @@
 			</tr>
 		</table>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao26status" style="color: #e4e441">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao26status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
 
 	</div>
@@ -926,19 +927,19 @@
 			if (strCPF.length == 0){
 				campoCPF.style.background = "#ffffff";
 				campoStatus.innerHTML = "Preencha o campo de CPF.";
-				campoStatus.style.color = "#e4e441"; 
+				campoStatus.style.color = "#7438ec"; 
 			}
 			
 			if (strEmail.length == 0){
 				document.getElementById("email").style.background = "#ffffff";
 				campoStatus.innerHTML = "Preencha o campo de email.";
-				campoStatus.style.color = "#e4e441"; 
+				campoStatus.style.color = "#7438ec"; 
 			}
 
 			//volta a mensagem de preenchimento dos campos se os dois estiverem vazios
 			if (strCPF.length == 0 && strEmail.length == 0){
 				campoStatus.innerHTML = "Preencha o campo de CPF e email.";
-				//campoStatus.style.color = "#e4e441"; 
+				//campoStatus.style.color = "#7438ec"; 
 				return false
 			}
 			
@@ -1045,7 +1046,7 @@
 			switch(erro){
 				case 1: 
 					campoStatus.innerHTML = "Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.";
-					campoStatus.style = "color: #e4e441";
+					campoStatus.style = "color: #7438ec";
 					break;
 				case 2: 
 					campoStatus.innerHTML = "O(s) campo(s) destacados em vermelho devem ser preenchidos com valores de 1 à 4.";
