@@ -947,9 +947,9 @@
 				if (!cpfOK) {
 					campoStatus.innerHTML = "CPF incorreto.";
 					campoStatus.style.color = "#d14f4f";
-					campoCPF.style.background = "#d14f4f";
+					campoCPF.style.background = "#FB607F";
 				} else {
-					campoCPF.style.background = "#4CAF50";
+					campoCPF.style.background = "#98FB98";
 					campoStatus.innerHTML = "Preencha o campo de email.";
 				}
 			} 
@@ -961,10 +961,10 @@
 						campoStatus.innerHTML = "Email inválido.";
 					}
 					campoStatus.style.color = "#d14f4f";
-					campoEmail.style.background = "#d14f4f";
+					campoEmail.style.background = "#FB607F";
 					return false;
 				} else {
-					campoEmail.style.background = "#4CAF50";
+					campoEmail.style.background = "#98FB98";
 				}
 			} 
 
@@ -1008,10 +1008,10 @@
 
 				if (valorCampo != '') {
 					if ((isNaN(valorCampo) || valorCampo < 1 || valorCampo > 4)) {
-						campoResposta[0].style.background = '#d14f4f';
+						campoResposta[0].style.background = '#FB607F';
 						erro = 2;
 					} else {
-						campoResposta[0].style.background = "#21c229";
+						campoResposta[0].style.background = "#98FB98";
 					}
 				} else {
 					campoResposta[0].style.background = "#ffffff";
