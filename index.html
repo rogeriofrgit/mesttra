@@ -120,6 +120,15 @@
 			font-size: 20px;
 		}
 
+		.campoRespostaSelect {
+			width: 450px;
+			padding: 10px 20px 10px ;
+			border: 2px solid #e4d4fc;
+			border-radius: 4px;
+			box-sizing: border-box;
+			font-size: 20px;
+		}
+		
 		.campoDadosPessoais {
 			padding: 5px 5px 5px ;
 			border: 2px solid #e4d4fc;
@@ -209,7 +218,7 @@
 		<input type="text" name="email" id="email" class="campoDadosPessoais" style="width: 400px;" onblur="validarCamposPessoais()">
 		<br>
 		<br>
-		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="dadosPessoais" style="color: #7438ec">Preencha o campo de CPF e email.</span>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="dadosPessoaisStatus" style="color: #7438ec">Preencha o campo de CPF e email.</span>
 	</div>
 	
 	<div class="centralizado">
@@ -817,7 +826,44 @@
 		<br>
 		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="questao26status" style="color: #7438ec">Preecha todos os campos em branco, com valores de 1 a 4 não repetindo os mesmos valores na mesma pergunta.</span>
 	</div>
-
+	<div class="centralizado">
+		<label class="tituloQuestao">A última etapa do processo seletivo consiste em uma entrevista/dinâmica realizada por vídeo-conferência. Selecione abaixo o dia e horário que você possui disponibilidade para participar.</label><br><br>
+		<select name="horarioEntrevista" id="horarioEntrevista" class="campoRespostaSelect" onchange="validarCampoEntrevista()">
+			<option value="erro">Selecione uma opção</option>
+			<option value="21 - 10:00 às 11:00">21/06/2023 4ª feira - 10:00 às 11:00</option>
+			<option value="21 - 15:00 às 16:00">21/06/2023 4ª feira - 15:00 às 16:00</option>
+			<option value="21 - 16:00 às 17:00">21/06/2023 4ª feira - 16:00 às 17:00</option>
+			<option value="22 - 10:00 às 11:00">22/06/2023 5ª feira - 10:00 às 11:00</option>
+			<option value="22 - 15:00 às 16:00">22/06/2023 5ª feira - 15:00 às 16:00</option>
+			<option value="22 - 16:00 às 17:00">22/06/2023 5ª feira - 16:00 às 17:00</option>
+			<option value="23 - 10:00 às 11:00">23/06/2023 6ª feira - 10:00 às 11:00</option>
+			<option value="23 - 15:00 às 16:00">23/06/2023 6ª feira - 15:00 às 16:00</option>
+			<option value="23 - 16:00 às 17:00">23/06/2023 6ª feira - 16:00 às 17:00</option>
+			<option value="26 - 10:00 às 11:00">26/06/2023 2ª feira - 10:00 às 11:00</option>
+			<option value="26 - 15:00 às 16:00">26/06/2023 2ª feira - 15:00 às 16:00</option>
+			<option value="26 - 16:00 às 17:00">26/06/2023 2ª feira - 16:00 às 17:00</option>
+			<option value="26 - 19:00 às 20:00">26/06/2023 2ª feira - 19:00 às 20:00</option>
+			<option value="27 - 10:00 às 11:00">27/06/2023 3ª feira - 10:00 às 11:00</option>
+			<option value="27 - 15:00 às 16:00">27/06/2023 3ª feira - 15:00 às 16:00</option>
+			<option value="27 - 16:00 às 17:00">27/06/2023 3ª feira - 16:00 às 17:00</option>
+			<option value="27 - 19:00 às 20:00">27/06/2023 3ª feira - 19:00 às 20:00</option>
+			<option value="28 - 10:00 às 11:00">28/06/2023 4ª feira - 10:00 às 11:00</option>
+			<option value="28 - 15:00 às 16:00">28/06/2023 4ª feira - 15:00 às 16:00</option>
+			<option value="28 - 16:00 às 17:00">28/06/2023 4ª feira - 16:00 às 17:00</option>
+			<option value="28 - 19:00 às 20:00">28/06/2023 4ª feira - 19:00 às 20:00</option>
+			<option value="29 - 10:00 às 11:00">29/06/2023 5ª feira - 10:00 às 11:00</option>
+			<option value="29 - 15:00 às 16:00">29/06/2023 5ª feira - 15:00 às 16:00</option>
+			<option value="29 - 16:00 às 17:00">29/06/2023 5ª feira - 16:00 às 17:00</option>
+			<option value="29 - 19:00 às 20:00">29/06/2023 5ª feira - 19:00 às 20:00</option>
+			<option value="30 - 10:00 às 11:00">30/06/2023 6ª feira - 10:00 às 11:00</option>
+			<option value="30 - 15:00 às 16:00">30/06/2023 6ª feira - 15:00 às 16:00</option>
+			<option value="30 - 16:00 às 17:00">30/06/2023 6ª feira - 16:00 às 17:00</option>
+		</select>
+		<br>
+		<br>
+		<span style="font-weight: bold;">Status preenchimento:&nbsp;</span><span id="entrevistaStatus" style="color: #7438ec">Selecione um horário.</span>
+		<br>
+	</div>
 	</div>
 	<div style="height: 100px;">
 		<div class="divSalvar"><input type="submit" value="Salvar" class="btnSalvar" id="btnSalvar"></div>
@@ -845,6 +891,7 @@
 
 		function esconderInicio() {
 			document.querySelector(".inicioDivExterno").style.display = "none";
+			document.getElementById("cpf").select();
 		}
 
 		function autoSelecionarTexto() {
@@ -906,11 +953,57 @@
 			return true;
 		}
 
+		function verificaStatus(){
+			for (var i=1; i<=26; i++) {
+				if (document.getElementById("questao"+i+"status").innerHTML != "Preenchimento correto.") {
+					return 1;
+				}
+			}
+
+			if (document.getElementById("entrevistaStatus").innerHTML != "Preenchimento correto.") {
+				return 1;
+			}
+			
+			if (document.getElementById("dadosPessoaisStatus").innerHTML != "Preenchimento correto.") {
+				return 1;
+			}
+			
+			return 0;
+		}
+		
+		function habilitaDesabilitaBtnSalvar(erro) {
+			if (erro == 0) {
+				document.getElementById("btnSalvar").disabled = false;
+				document.querySelector(".divSalvar").style.display = "flex";
+				document.getElementById("btnSalvar").focus();
+			} else {
+				document.getElementById("btnSalvar").disabled = true;
+				document.querySelector(".divSalvar").style.display = "none";
+			}
+		}
+
+		function validarCampoEntrevista(){
+			if(document.getElementById("horarioEntrevista").value == "erro") {
+				document.getElementById("entrevistaStatus").innerHTML = "Selecione um horário.";
+				document.getElementById("entrevistaStatus").style = "color: #d14f4f";
+				document.getElementById("horarioEntrevista").style = "background: #FB607F";
+			} else {
+				document.getElementById("entrevistaStatus").innerHTML = "Preenchimento correto.";
+				document.getElementById("entrevistaStatus").style = "color: #4CAF50";
+				document.getElementById("horarioEntrevista").style = "background: #98FB98";
+			} 
+			
+			var erro = 0;
+
+			erro = verificaStatus();
+			habilitaDesabilitaBtnSalvar(erro);
+		}
+		
 		function validarCamposPessoais(){
 			var erroCPF = 0;
 			var erroEmail = 0;
 			
-			const campoStatus = document.getElementById("dadosPessoais");
+			const campoStatus = document.getElementById("dadosPessoaisStatus");
 			const campoCPF = document.getElementById("cpf");
 			const campoEmail = document.getElementById("email");
 
@@ -940,6 +1033,7 @@
 			if (strCPF.length == 0 && strEmail.length == 0){
 				campoStatus.innerHTML = "Preencha o campo de CPF e email.";
 				//campoStatus.style.color = "#7438ec"; 
+				habilitaDesabilitaBtnSalvar(1);
 				return false
 			}
 			
@@ -962,6 +1056,7 @@
 					}
 					campoStatus.style.color = "#d14f4f";
 					campoEmail.style.background = "#FB607F";
+					habilitaDesabilitaBtnSalvar(1);				
 					return false;
 				} else {
 					campoEmail.style.background = "#98FB98";
@@ -971,14 +1066,16 @@
 			if (cpfOK && emailOK){
 				campoStatus.innerHTML = "Preenchimento correto.";
 				campoStatus.style.color = "#4CAF50"; 
+				campoCPF.style.background = "#98FB98";
+				campoEmail.style.background = "#98FB98";
 			}
+			
+			var erro = 0;
 
+			erro = verificaStatus();
+			habilitaDesabilitaBtnSalvar(erro);
 		}
 		
-
-		function validarCampoEmail(){
-			var email = String(event.target.name).value;
-		}
 
 		function validarCampo() {
 			var valorCampo;
@@ -1063,21 +1160,10 @@
 			
 
 			var erro = 0;
-			for (var i=1; i<=26; i++) {
-				if (document.getElementById("questao"+i+"status").innerHTML != "Preenchimento correto.") {
-					erro = 1;
-					break;
-				}
-			}
 
-			if (erro == 0) {
-				document.getElementById("btnSalvar").disabled = false;
-				document.querySelector(".divSalvar").style.display = "flex";
-				document.getElementById("btnSalvar").focus();
-			} else {
-				document.getElementById("btnSalvar").disabled = true;
-				document.querySelector(".divSalvar").style.display = "none";
-			}
+			erro = verificaStatus();
+			habilitaDesabilitaBtnSalvar(erro);
+
 		}
 
 		function calcularSomas(){
